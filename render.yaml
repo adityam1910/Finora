@@ -1,0 +1,16 @@
+# Render Blueprint: deploys the FastAPI backend. Deploy the frontend on Vercel (see README).
+services:
+  - type: web
+    name: finora-api
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: CORS_ORIGINS
+        value: https://YOUR-APP.vercel.app
+      - key: DATABASE_URL
+        value: sqlite:///./finora.db   # free tier resets on redeploy; use a Postgres/MySQL URL for persistent data

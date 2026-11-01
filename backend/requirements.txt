@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+pydantic
+PyJWT
+scikit-learn
+numpy>=1.26
+pandas>=2.2
+joblib>=1.4
+python-dotenv
+pytest
+httpx
+# For MySQL (as in the report) add: pymysql   |  For PostgreSQL add: psycopg2-binary
