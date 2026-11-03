@@ -7,6 +7,7 @@ import { Button, Card, Empty } from "@/components/ui";
 import { useInsights } from "@/components/useInsights";
 import { api, inr } from "@/lib/api";
 import { useAuth } from "@/lib/auth";
+import { UpgradeButton } from "@/components/UpgradeButton";
 
 export default function Overview() {
   const { user } = useAuth();
@@ -37,6 +38,7 @@ export default function Overview() {
       <div className="mt-4">
         <h1 className="text-4xl font-extrabold">Hi {user?.name.split(" ")[0]}</h1>
         <p className="mt-1 text-ink-soft">You have {s.active_count} active recurring payments{s.due_in_7_days ? `, ${s.due_in_7_days} due this week` : ""}.</p>
+        <div className="mt-3"><UpgradeButton onDone={() => alert("Payment verified. Welcome to Finora Pro!")} /></div>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">

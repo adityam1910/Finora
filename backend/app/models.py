@@ -14,7 +14,8 @@ class User(Base):
     account_status: Mapped[str] = mapped_column(String(20), default="active")
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
     subscriptions: Mapped[list["Subscription"]] = relationship(back_populates="user", cascade="all, delete-orphan")
-
+    plan: Mapped[str] = mapped_column(String(20), default="free")
+    
 
 class Subscription(Base):
     __tablename__ = "subscriptions"
