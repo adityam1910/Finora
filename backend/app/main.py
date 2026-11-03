@@ -5,7 +5,7 @@ from .config import CORS_ORIGINS
 from .database import Base, engine
 from .ml.cost_model import get_model
 from .ml.detector import get_detector
-from .routers import ai, auth, subscriptions
+from .routers import ai, auth, subscriptions, billing
 
 
 @asynccontextmanager
@@ -20,6 +20,7 @@ app.add_middleware(CORSMiddleware, allow_origins=CORS_ORIGINS, allow_credentials
 app.include_router(auth.router)
 app.include_router(subscriptions.router)
 app.include_router(ai.router)
+app.include_router(billing.router)
 
 
 @app.get("/api/health")
