@@ -4,6 +4,8 @@ Finora centralises every recurring payment (OTT plans, gym fees, EMIs, insurance
 
 B.Tech project, Department of Computer and Communication Engineering, School of Computing and Intelligent Systems, Manipal University Jaipur.
 
+Live at https://finora-xi-ten.vercel.app
+
 ## Features
 - Register / login with JWT authentication (PBKDF2 password hashing)
 - Subscription CRUD, "mark as paid" (advances due date, logs transaction history), cancel tracking, shared-cost splitting
